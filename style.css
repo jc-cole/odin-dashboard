@@ -3,13 +3,23 @@
     src: url(./Roboto-Regular.ttf);
 }
 
-h1, h2, h2, h4, h5, p, ul{
+h1, h2, h3, h4, h5, p, ul{
     margin: 0px;
     padding: 0px;
 }
 
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+}
+
 ul {
     width: 100%;
+}
+
+p {
+    font-size: 9pt;
+    margin-bottom: 5px;
+    color: darkslategray
 }
 
 
@@ -104,7 +114,6 @@ nav.sidebar img {
     grid-column: 2;
 }
 
-
 header {
     background-color: var(--white);
 
@@ -113,6 +122,8 @@ header {
 
     grid-column: 2;
     grid-row: 1;
+
+    margin: 15px;
 }
 
 .search {
@@ -215,6 +226,9 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3rem;
+    gap: 30px;
+
+    margin: 30px;
 
 }
 
@@ -223,11 +237,37 @@ main {
     grid-row: 1;
 }
 
-.announcements {
-    background-color: bisque;
+.projects .card {
+    background-color: white;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 15px;
+    border-color: var(--white);
+    border-left-color: var(--yellow); 
+    padding: 15px;
 
     display: grid;
-    grid-template-rows: 3rem repeat(3, 1fr);
+    
+}
+
+.projects .card-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.projects .card-button {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+.announcements {
+    background-color: var(--grey);
+
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    margin-right: 30px;
 
     grid-column: 2;
     grid-row: 1;
@@ -235,13 +275,32 @@ main {
 
 .announcements .section-title {
     grid-row: 1;
+    align-self: center;
+}
+
+.announcements-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.announcements-wrapper div:not(:last-child) {
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-color: var(--grey);
+    border-style: solid;
 }
 
 .trending {
-    background-color: darkkhaki;
+    background-color: var(--grey);
 
     display: grid;
-    grid-template-rows: 3rem repeat(4, 1fr);
+    grid-template-rows: 1fr 8fr;
 
     grid-column: 2;
     grid-row: 2;
@@ -250,4 +309,35 @@ main {
 .trending .section-title {
     grid-column: 1;
     grid-row: 1;
+}
+
+.trending-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.trending .pfp {
+    background-color: var(--yellow);
+    width: var(--pfp-size);
+    height: var(--pfp-size);
+    border-radius: 100%;
+}
+
+.trending-card {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.trending-card .pfp {
+    grid-row: span 2;
 }
